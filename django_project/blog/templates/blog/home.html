@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+<!--This file is a template for the homepage of blog/ route or blog homepage. Allows us to run HTML code from a file rather than writing it all in the return statement of the home function in views.py -->
+
+<!-- With template inheritance from base.html -->
+{% block content %}
+	{% for post in posts %}
+		<h1>{{ post.title }}</h1>
+		<p>By {{ post.author }} on {{post.date_posted}}</p>
+		<p>{{ post.content }}</p>
+	{% endfor %}
+{% endblock content %}
+
+
+
+<!--This file is a template for the homepage of blog/ route or blog homepage. Allows us to run HTML code from a file rather than writing it all in the return statement of the home function in views.py -->
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %} 
+		<title>Django Blog - {{ title }}</title>
+	{% else %}
+		<title>Django Blog</title>
+	{% endif %}
+</head>
+<body>
+	{% for post in posts %}
+		<h1>{{ post.title }}</h1>
+		<p>By {{ post.author }} on {{post.date_posted}}</p>
+		<p>{{ post.content }}</p>
+	{% endfor %}
+</body>
+</html>
+-->
+
+<!-- With template inheritance from base.html -->
