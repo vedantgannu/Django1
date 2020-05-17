@@ -4,12 +4,19 @@
 <!-- With template inheritance from base.html -->
 {% block content %}
 	{% for post in posts %}
-		<h1>{{ post.title }}</h1>
-		<p>By {{ post.author }} on {{post.date_posted}}</p>
-		<p>{{ post.content }}</p>
+		<!-- Below html comes from a snippet "articles.html" that formats our article data: Yt: Templates -->
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ post.author }}</a>
+		      <small class="text-muted">{{ post.date_posted }}</small>
+		    </div>
+		    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+		    <p class="article-content">{{ post.content }}</p>
+		  </div>
+		</article>
 	{% endfor %}
 {% endblock content %}
-
 
 
 <!--This file is a template for the homepage of blog/ route or blog homepage. Allows us to run HTML code from a file rather than writing it all in the return statement of the home function in views.py -->
